@@ -12,4 +12,4 @@ Here's how to install and add the plugin to mov-cli.
 ```
 git clone https://github.com/mov-cli/mov-cli-boilerplate.git
 ```
-2. Have fun.
+2. Have fun. 😊
