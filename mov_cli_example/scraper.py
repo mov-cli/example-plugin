@@ -8,23 +8,24 @@ if TYPE_CHECKING:
     from mov_cli.http_client import HTTPClient
     from mov_cli.scraper import ScraperOptionsT
 
+from mov_cli import Single, Multi, Metadata
+
 from mov_cli.scraper import Scraper
 from mov_cli.utils import EpisodeSelector
-from mov_cli import Single, Multi, Metadata, MetadataType
 
-__all__ = ("Boilerplate", )
+__all__ = ("Example", )
 
-class Boilerplate(Scraper):
+class Example(Scraper):
     def __init__(self, config: Config, http_client: HTTPClient, options: Optional[ScraperOptionsT] = None) -> None:
         self.base_url = ...
-        
-        super().__init__(config, http_client)
 
-    def search(self, query: str, limit: int = 10) -> Generator[Metadata, Any, None]:
+        super().__init__(config, http_client, options)
+
+    def search(self, query: str, limit: int = 20) -> Generator[Metadata, Any, None]:
         ...
-    
+
     def scrape_metadata_episodes(self, metadata: Metadata) -> Dict[int, int] | Dict[None, int]:
         ...
     
-    def scrape(self, metadata: Metadata, episode: EpisodeSelector, **kwargs) -> Single | Multi:
+    def scrape(self, metadata: Metadata, episode: EpisodeSelector) -> Single | Multi:
         ...

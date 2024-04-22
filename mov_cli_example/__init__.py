@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 from .scraper import *
 
 plugin: PluginHookData = {
-    "version": 1, 
-    "package_name": ..., 
+    "version": 1, # plugin hook version
+    "package_name": "mov-cli-example", # pypi package name
     "scrapers": {
-        "DEFAULT": Boilerplate, 
+        "DEFAULT": Example, 
     }
 }
 
