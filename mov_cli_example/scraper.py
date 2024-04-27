@@ -24,7 +24,7 @@ class Example(Scraper):
     def search(self, query: str, limit: int = 20) -> Generator[Metadata, Any, None]:
         ...
 
-    def scrape_metadata_episodes(self, metadata: Metadata) -> Dict[int, int] | Dict[None, int]:
+    def scrape_episodes(self, metadata: Metadata) -> Dict[int, int] | Dict[None, int]:
         ...
     
     def scrape(self, metadata: Metadata, episode: EpisodeSelector) -> Single | Multi:
